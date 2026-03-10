@@ -1,0 +1,3 @@
+
+//la parte privada de la aplicacion
+//Realizar las insercciones de usuarios,clientes,productos,etc...
