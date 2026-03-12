@@ -1,45 +1,65 @@
 const Categoria = () => {
-  return (
-    <div className="bg-gray-100">
-  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
-      <h2 className="text-2xl font-bold text-gray-900">Colecciones</h2>
+  const asignaturas = [
+    {
+      nombre: 'Lenguajes de Marcas',
+      descripcion: 'Dominando HTML5, CSS3 y la estructura de documentos XML/JSON.',
+      imagen: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80',
+      href: '#',
+    },
+    {
+      nombre: 'Programación',
+      descripcion: 'Desarrollo de la lógica algorítmica y fundamentos de lenguajes (Java/Python).',
+      imagen: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80',
+      href: '#',
+    },
+    {
+      nombre: 'Sistemas Informáticos',
+      descripcion: 'Instalación, configuración y gestión de sistemas operativos y hardware.',
+      imagen: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
+      href: '#',
+    },
+  ];
 
-      <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-x-6">
-        <div className="group relative">
-          <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-01.jpg" alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." className="w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square" />
-          <h3 className="mt-6 text-sm text-gray-500">
-            <a href="#">
-              <span className="absolute inset-0"></span>
-             Escritorio y oficina
-            </a>
-          </h3>
-          <p className="text-base font-semibold text-gray-900">Accesorios para trabajar desde casa</p>
-        </div>
-        <div className="group relative">
-          <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-02.jpg" alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant." className="w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square" />
-          <h3 className="mt-6 text-sm text-gray-500">
-            <a href="#">
-              <span className="absolute inset-0"></span>
-              Superación personal
-            </a>
-          </h3>
-          <p className="text-base font-semibold text-gray-900">Diarios y toma de notas</p>
-        </div>
-        <div className="group relative">
-          <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-03.jpg" alt="Collection of four insulated travel bottles on wooden shelf." className="w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square" />
-          <h3 className="mt-6 text-sm text-gray-500">
-            <a href="#">
-              <span className="absolute inset-0"></span>
-             Viajar
-            </a>
-          </h3>
-          <p className="text-base font-semibold text-gray-900">Essenciales para el transporte diario</p>
+  return (
+    <div className="bg-[#0f172a]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
+          <div className="flex items-center justify-between mb-10">
+            <h2 className="text-3xl font-bold text-white border-l-4 border-yellow-400 pl-4">
+              Mi Formación (1º DAW)
+            </h2>
+            <span className="text-yellow-400 font-mono text-sm bg-yellow-400/10 px-3 py-1 rounded-full border border-yellow-400/20">
+              Curso 2025-2026
+            </span>
+          </div>
+
+          <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-x-6">
+            {asignaturas.map((item) => (
+              <div key={item.nombre} className="group relative">
+                <div className="relative h-80 w-full overflow-hidden rounded-lg bg-gray-800 group-hover:opacity-75 transition-all duration-300">
+                  <img
+                    src={item.imagen}
+                    alt={item.nombre}
+                    className="h-full w-full object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent opacity-60" />
+                </div>
+                
+                <h3 className="mt-6 text-sm text-yellow-400 font-bold uppercase tracking-widest">
+                  <a href={item.href}>
+                    <span className="absolute inset-0" />
+                    {item.nombre}
+                  </a>
+                </h3>
+                <p className="text-lg font-medium text-gray-300 mt-2">
+                  {item.descripcion}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
   );
 };
 

@@ -1,109 +1,93 @@
-const posts = [
+const estudios = [
   {
     id: 1,
-    title: 'Ciclo de desarrollo DAW',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    category: { title: 'Marketing', href: '#' },
-    author: {
-      name: 'Michael Foster',
-      role: 'Co-Founder / CTO',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
+    titulo: "Ciclo Superior Desarrollo de Aplicaciones Web (DAW)",
+    centro: "Instituto de Formación Profesional",
+    descripcion:
+      "Formación centrada en desarrollo web, programación, bases de datos y creación de aplicaciones modernas.",
+    fecha: "2024 - Actualidad",
+    categoria: "Desarrollo Web",
   },
   {
     id: 2,
-    title: 'Ciclo de Grado Superior de ASIR',
-    href: '#',
-    description: 'Optio cum necessitatibus dolor voluptatum provident commodi et. Qui aperiam fugiat nemo cumque.',
-    date: 'Mar 10, 2020',
-    datetime: '2020-03-10',
-    category: { title: 'Dev Ops', href: '#' },
-    author: {
-      name: 'Lindsay Walton',
-      role: 'Front-end Developer',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
+    titulo: "Ciclo Superior Administración de Sistemas Informáticos (ASIR)",
+    centro: "Instituto de Formación Profesional",
+    descripcion:
+      "Administración de sistemas, redes, servidores y seguridad informática.",
+    fecha: "2022 - 2024",
+    categoria: "Sistemas",
   },
   {
     id: 3,
-    title: 'Cuso de Especializacion de Big Data y Analytics',
-    href: '#',
-    description:
-      'Cupiditate maiores ullam eveniet adipisci in doloribus nulla minus. Voluptas iusto libero adipisci rem et corporis. Nostrud sint anim sunt aliqua. Nulla eu labore irure incididunt velit cillum quis magna dolore.',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    category: { title: 'Negocios', href: '#' },
-    author: {
-      name: 'Tom Cook',
-      role: 'Director of Product',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
+    titulo: "Curso de Especialización Big Data y Analytics",
+    centro: "Formación Profesional",
+    descripcion:
+      "Análisis de datos, procesamiento de grandes volúmenes de información y herramientas de análisis.",
+    fecha: "Próximamente",
+    categoria: "Big Data",
   },
-]
+];
 
 const Formaciones = () => {
-    return (
-        <section id="formaciones" className="min-h-screen flex items-center justify-center">
-         <div className="bg-gray-900 py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Titulaciones Academicas</h2>
-          <p className="mt-2 text-lg/8 text-gray-300">Titulos de Formación profesional.</p>
+  return (
+    <section
+      id="formaciones"
+      className="min-h-screen bg-[#0f172a] flex items-center justify-center py-24 px-6"
+    >
+      <div className="max-w-7xl w-full">
+
+        {/* Título */}
+        <div className="max-w-2xl mb-12">
+          <h2 className="text-4xl font-bold text-white">
+            Formación Académica
+          </h2>
+          <p className="mt-3 text-lg text-slate-400">
+            Estudios y especializaciones dentro del mundo de la informática y el desarrollo web.
+          </p>
         </div>
-        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-700 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {posts.map((post) => (
-            <article key={post.id} 
-                      className="flex max-w-xl flex-col items-start justify-between
-                      rounded-md border-4 border-indigo-500/100 p-3 hover:bg-amber-300 ">
-              <div className="flex items-center gap-x-4 text-xs">
-                <time dateTime={post.datetime} className="text-gray-400">
-                  {post.date}
-                </time>
-                <a
-                  href={post.category.href}
-                  className="relative z-10 rounded-full bg-yellow-800 px-3 py-1.5 font-medium 
-                             text-gray-300 hover:bg-gray-800"
-                >
-                  {post.category.title}
-                </a>
-              </div>
-              <div className="group relative grow">
-                <h3 className="mt-3 text-lg/6 font-semibold text-red-900 group-hover:text-gray-300">
-                  <a href={post.href}>
-                    <span className="absolute inset-0" />
-                    {post.title}
-                  </a>
-                </h3>
-                <p className="mt-5 line-clamp-3 text-sm/6 text-gray-400">{post.description}</p>
-              </div>
-              <div className="relative mt-8 flex items-center gap-x-4 justify-self-end">
-                <img alt="" src={post.author.imageUrl} className="size-10 rounded-full bg-gray-800" />
-                <div className="text-sm/6">
-                  <p className="font-semibold text-white">
-                    <a href={post.author.href}>
-                      <span className="absolute inset-0" />
-                      {post.author.name}
-                    </a>
-                  </p>
-                  <p className="text-gray-400">{post.author.role}</p>
-                </div>
-              </div>
-            </article>
+
+        {/* Tarjetas */}
+        <div className="grid md:grid-cols-3 gap-8">
+
+          {estudios.map((estudio) => (
+            <div
+              key={estudio.id}
+              className="bg-[#1e293b] p-6 rounded-2xl border border-slate-700 
+              hover:border-indigo-500 hover:scale-105 transition duration-300"
+            >
+
+              {/* categoría */}
+              <span className="text-xs bg-indigo-600 text-white px-3 py-1 rounded-full">
+                {estudio.categoria}
+              </span>
+
+              {/* título */}
+              <h3 className="mt-4 text-xl font-semibold text-white">
+                {estudio.titulo}
+              </h3>
+
+              {/* centro */}
+              <p className="text-slate-400 text-sm mt-1">
+                {estudio.centro}
+              </p>
+
+              {/* descripción */}
+              <p className="text-slate-300 text-sm mt-4">
+                {estudio.descripcion}
+              </p>
+
+              {/* fecha */}
+              <p className="mt-6 text-sm text-indigo-400 font-semibold">
+                {estudio.fecha}
+              </p>
+
+            </div>
           ))}
+
         </div>
       </div>
-    </div>
-        </section>
-    )
-}
+    </section>
+  );
+};
+
 export default Formaciones;

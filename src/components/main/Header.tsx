@@ -5,18 +5,15 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 //navigation es un array JS [] de objetos {},--> Array JSON
 const opciones = [
-  { 
-    name: 'Quienes somos', 
-    href: '#q-somos', 
-    current: false 
-},
-  { name: 'Trabajo', href: '#trabajos', current: false },
-  { name: 'Formaciones', href: '#formaciones', current: false },
+  { name: 'Quienes somos', href: '#q-somos', current: false },
+  { name: 'Trabajo', href: '#productos', current: false }, 
+  { name: 'Formaciones', href: '#categorias', current: false }, 
   { name: 'Servicios', href: '#servicios', current: false },
   { name: 'Productos', href: '#productos', current: false },
   { name: 'Categorias', href: '#categorias', current: false },
-  
 ]
+  
+
 
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(' ')

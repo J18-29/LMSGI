@@ -3,3 +3,9 @@
  text-align: center;
 }
 
+html {
+  scroll-behavior: smooth;
+  /* Como tu header es fijo (fixed), añade esto para que el título de 
+     la sección no quede tapado por la barra de navegación: */
+  scroll-padding-top: 80px; 
+}
