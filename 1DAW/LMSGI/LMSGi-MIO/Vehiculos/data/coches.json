@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "nombre": "Dacia Sandero",
+    "precio": 13.063,
+    "pvp": 13.940,
+    "imagen": "https://images.coches.com/_vn_/dacia/Sandero/3a81e802bf89b006256f8407196829f6.jpg?w=720&ar=4:3"
+  },
+  {
+    "id": 2,
+    "nombre": "MG HS",
+    "precio": 22.075,
+    "pvp": 29.990,
+    "imagen": "https://images.coches.com/_vn_/mg/HS/dbadbd496d604be54e94a37e7a6c1319.jpg?w=720&ar=4:3"
+  },
+  {
+    "id": 3,
+    "nombre": "Toyota Corolla",
+    "precio": 25.054,
+    "pvp": 32.300,
+    "imagen": "https://images.coches.com/_vn_/toyota/Corolla/4092b36f07f60e20ba03925924bf0318.jpg?w=720&ar=4:3"
+  },
+  {
+    "id": 4,
+    "nombre": "Hyundai Tucson",
+    "precio": 31.506,
+    "pvp": 35.525,
+    "imagen": "https://images.coches.com/_vn_/hyundai/Tucson/94a6342e63140a82c9a48858f40fd153.jpg?w=720&ar=4:3"
+  },
+  {
+    "id": 5,
+    "nombre": "Kia Sportage",
+    "precio": 35.820,
+    "pvp": 37.804,
+    "imagen": "https://images.coches.com/_vn_/kia/Sportage/360d2ef8cac89f9f3b3860af15b34723.jpg?w=720&ar=4:3"
+    
+  },
+  {
+    "id": 6,
+    "nombre": "Seat León",
+    "precio": 22.568,
+    "pvp": 27.460,
+    "imagen": "https://images.coches.com/_vn_/seat/Leon/61a432afb8beaf1fa2b99844e011862b.jpg?w=720&ar=4:3"
+  },
+  {
+    "id": 7,
+    "nombre": "Renault Clio",
+    "precio": 17.605,
+    "pvp": 24.990,
+    "imagen": "https://images.coches.com/_vn_/renault/Clio/af060ed370436d49452ebcdb22758699.jpg?w=720&ar=4:3"
+  }
+]

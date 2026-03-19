@@ -1,0 +1,140 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #fff8f0, #ffe5d4);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+header {
+    background: linear-gradient(135deg, #ff6f61, #ff8f81);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 0;
+}
+
+
+header figure {
+    margin: 0;
+}
+
+header img {
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    margin: 0.5rem 0;
+    font-size: 2.5rem;
+}
+
+
+header p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+
+
+main .menu {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background-color: #fffaf5;
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+main .menu:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+}
+
+    
+
+main .menu h2 {
+    border-bottom: 2px dashed #ff6f61;
+    padding-bottom: 0.5rem;
+    color: #ff6f61;
+    text-align: center;
+    font-weight: 700;
+}
+
+main .menu h3 {
+    margin-top: 1.5rem;
+    color: #ff8a75;
+}
+
+
+main .menu .menu-item {
+     display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border-radius: 12px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+main .menu .menu-item:hover {
+    background-color: #ffece1;
+    transform: scale(1.02);
+}
+main .menu .menu-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; 
+    border-radius: 8px;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+
+main .menu .menu-item .menu-item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    width: 100%;
+    gap: 0.5rem;
+}
+
+main .menu .menu-item .menu-item-content .item-name {
+    flex: 1 1 auto;
+    word-wrap: break-word; 
+}
+
+
+main .menu .menu-item .menu-item-content .item-price {
+    margin: 0;
+    font-weight: bold;
+}
+
+
+main .menu .total {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 1rem;
+    border-top: 1px solid #ff6f61;
+    padding-top: 0.5rem;
+}
+
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ff6f61;
+    color: white;
+    margin-top: 2rem;
+}
