@@ -5,8 +5,8 @@ import { Home } from '@/pages/Home'
 import { Trabajos } from '@/pages/Trabajos'
 import { Contacto } from '@/pages/Contacto'
 import { MainLayout } from '@/layouts/MainLayout'
-import Servicios from '@/servicios/Servicios'
-import ServiciosDetalle from '@/servicios/ServicioDetalles'
+import Servicios from "@/pages/servicios/Servicios";
+import { ServicioDetalle } from "@/pages/servicios/ServicioDetalle";
 
 export const AppRouter = () => {
     return (
@@ -17,7 +17,7 @@ export const AppRouter = () => {
                     <Route path="/trabajos" element={<Trabajos />} />
                     <Route path="/contacto" element={<Contacto />} />
                     <Route path="/servicios" element={<Servicios />} />
-                    <Route path="/servicios/:id" element={<ServiciosDetalle />} />
+                    <Route path="/servicios/:id" element={<ServicioDetalle />} />
                 </Route>
             </Routes>
         </BrowserRouter>
