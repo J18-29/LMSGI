@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+header {
+    background-color: #E6E6FA;
+    padding: 15px;
+    display: grid;
+    grid-template-areas:
+        "navSociales  navSociales  navSociales"
+        "loginTfno    loginTfno    loginTfno"
+        "Logo         Titulos      Titulos"
+        "Direcciones  Direcciones  Fab"
+        "MenuPpal     MenuPpal     MenuPpal";
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto; 
+    gap: 15px 5px;
+    align-items: center;
+}
+
+
+header nav.sociales { 
+    grid-area: navSociales; 
+    text-align: center; 
+    color: #555; 
+}
+
+header nav.sociales i { 
+    margin: 0 10px; 
+}
+
+header div.login-tfno { 
+    grid-area: loginTfno; 
+    display: flex; 
+    justify-content: space-around; 
+    color: #4B0082; 
+    font-weight: bold;
+}
+
+header figure.logo { 
+    grid-area: Logo; 
+}
+
+header figure.logo img { 
+    width: 100%; 
+    max-width: 80px; 
+}
+
+header div.titulos { 
+    grid-area: Titulos; 
+}
+
+header div.titulos h1 { 
+    font-size: 1.4rem; 
+    color: #333; 
+}
+
+header div.titulos p { 
+    font-family: 'cursive', sans-serif; 
+    color: #8B4513; 
+}
+
+header div.direcciones { 
+    grid-area: Direcciones; 
+    display: flex; 
+    gap: 10px; 
+}
+
+
+header div.direcciones div.dir-box { 
+    background-color: rgba(0,0,0,0.1); 
+    padding: 8px; 
+    font-size: 0.7rem; 
+    border-radius: 4px;
+    flex: 1;
+}
+
+header i.fab-menu { 
+    grid-area: Fab; 
+    font-size: 2rem; 
+    text-align: center; 
+    color: #555;
+}
+
+header nav.menu-ppal { 
+    grid-area: MenuPpal; 
+}
+
+header nav.menu-ppal ul { 
+    list-style: none; 
+}
+
+header nav.menu-ppal ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+header nav.menu-ppal ul li i.fa-chevron-down {
+    display: inline-block; 
+}

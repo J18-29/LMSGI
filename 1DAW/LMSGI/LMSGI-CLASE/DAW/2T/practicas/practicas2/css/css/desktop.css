@@ -1,0 +1,37 @@
+header {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header h1 {
+    flex-basis: 25%;
+    order: 1;  
+    text-align: left;
+}
+
+
+header nav {
+    flex-basis: 50%;
+    order: 2;
+    justify-content: center;
+}
+
+
+header button {
+    flex-basis: 15%;
+    order: 3;   
+}
+main nav{
+    flex-basis: 100%;
+    width: 20%;
+}
+main section{
+    flex-basis: 100%;
+    width: 500%;
+}
+main aside{
+    flex-basis: 100%;
+    width: 30%;
+}

@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #E6E6FA;
+    display: flex;
+    flex-direction: column; /* Apila la fila superior y la fila del menú */
+    width: 100%;
+}
+
+/* FILA 1: Logo a la izquierda y Redes a la derecha */
+header .header-superior {
+    display: flex;
+    flex-direction: row; /* Fuerza línea horizontal */
+    justify-content: space-between; /* El logo y las redes se separan al máximo */
+    align-items: center;
+    padding: 10px 5%;
+}
+
+header .bloque-izquierdo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header .bloque-derecho {
+    display: flex;
+    flex-direction: row; /* Evita que el login se caiga debajo de las redes */
+    align-items: center;
+    gap: 20px;
+}
+
+/* FILA 2: El menú centrado debajo de todo lo anterior */
+header nav.menu-ppal {
+    width: 100%;
+    margin-top: 10px;
+}
+
+header nav.menu-ppal ul {
+    display: flex;
+    flex-direction: row; /* Fuerza que Home, Viviendas, etc. estén en una línea */
+    justify-content: center; /* Los centra en la pantalla */
+    gap: 80px;
+    list-style: none;
+    padding: 20px 0;
+}
+
+header nav.menu-ppal ul li {
+    display: flex;
+    flex-direction: column-reverse; /* Mantiene tus iconos CSS arriba del texto */
+    align-items: center;
+    font-weight: bold;
+    color: #4B0082;
+}
+
+/* LIMPIEZA: Ocultar lo que sobra en escritorio */
+header .fa-bars, 
+header .direcciones,
+header .fa-chevron-down {
+    display: none !important;
+}
+
+
+header nav.menu-ppal ul li i.fa-chevron-down {
+    display: none !important;
+}
+
+/* Generamos los iconos morados arriba del texto */
+header nav.menu-ppal ul li::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    color: #4B0082;
+    display: block;
+}
+
+/* Asignación de iconos por orden de lista */
+header nav.menu-ppal ul li:nth-child(1)::after { content: "\f015"; } /* Casa */
+header nav.menu-ppal ul li:nth-child(2)::after { content: "\f1ad"; } /* Edificio */
+header nav.menu-ppal ul li:nth-child(3)::after { content: "\f46d"; } /* Lista */
+header nav.menu-ppal ul li:nth-child(4)::after { content: "\f571"; } /* Factura */

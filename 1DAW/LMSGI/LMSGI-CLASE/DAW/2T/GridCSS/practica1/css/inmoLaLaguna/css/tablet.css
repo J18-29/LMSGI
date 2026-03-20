@@ -1,0 +1,90 @@
+@media screen and (min-width: 650px) {
+
+  /* ===== HEADER ===== */
+  header {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #e9ebff;
+  }
+
+  /* ===== FILA SUPERIOR ===== */
+  .sociales {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+
+  .login-tfno {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+  }
+
+  .sociales,
+  .login-tfno {
+    align-self: center;
+  }
+
+  header > .sociales {
+    grid-row: 1;
+  }
+
+  header > .login-tfno {
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  /* ===== FILA PRINCIPAL ===== */
+  .logo,
+  .titulos,
+  .direcciones,
+  .menu-ppal {
+    grid-row: 2;
+  }
+
+  /* GRID DE LA FILA PRINCIPAL */
+  header {
+    grid-template-columns: 160px 1fr 1fr 160px;
+    align-items: center;
+  }
+
+  /* ----- LOGO ----- */
+  .logo {
+    grid-column: 1;
+  }
+
+  /* ----- TITULOS ----- */
+  .titulos {
+    grid-column: 2;
+  }
+
+  /* ----- DIRECCIONES ----- */
+  .direcciones {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    grid-column: 3;
+  }
+
+  /* ----- MENÚ VERTICAL ----- */
+  .menu-ppal {
+    display: block;
+    grid-column: 4;
+  }
+
+  .menu-ppal ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* ----- HAMBURGUESA FUERA ----- */
+  .fab-menu {
+    display: none;
+  }
+}
