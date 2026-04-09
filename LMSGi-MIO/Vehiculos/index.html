@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Precios de coches nuevos - CochesOnline</title>
+
+<!-- Vincular CSS externo -->
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="img/logo.svg" alt="Coches.com">
+    </div>
+
+    <nav>
+        <a href="#">Vender coche</a>
+        <a href="#" class="active">Nuevos</a>
+        <a href="#">Km 0</a>
+        <a href="#">Segunda mano ▾</a>
+        <a href="#">Financiación</a>
+        <a href="#">Renting</a>
+        <a href="#">Seguros coche</a>
+        <a href="#">Noticias</a>
+    </nav>
+
+    <div class="user-account" title="Mi cuenta">
+        <svg width="20" height="20" stroke="currentColor" fill="none" stroke-width="2">
+            <circle cx="12" cy="7" r="4"></circle>
+            <path d="M20 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M4 21v-2a4 4 0 0 1 3-3.87"></path>
+        </svg>
+        Mi cuenta
+    </div>
+</header>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+    <a href="#">Coches nuevos</a> > <a href="#">Precios</a>
+</div>
+
+<h1>Precios de coches nuevos</h1>
+
+<!-- Buscador -->
+<div class="search-container">
+    <input type="text" class="search-input" placeholder="Por ejemplo: Audi A3">
+    <button class="search-button">
+        BUSCAR
+    </button>
+</div>
+
+<!-- Botón filtrar -->
+<button class="filter-button">FILTRAR BÚSQUEDA</button>
+
+<!-- Select ordenar -->
+<div class="ordenar-container">
+    <label for="ordenar">Ordenar por ...</label>
+    <select id="ordenar">
+        <option value="precio_asc">Precio más bajo</option>
+        <option value="precio_desc">Precio más alto</option>
+        <option value="kilometraje_asc">Kilometraje menor</option>
+        <option value="kilometraje_desc">Kilometraje mayor</option>
+        <option value="anio_desc">Año más nuevo</option>
+        <option value="anio_asc">Año más antiguo</option>
+    </select>
+</div>
+
+
+<!-- Tarjetas de coches -->
+<div class="car-gallery">
+
+    <article class="car-card">
+        <div class="image-wrapper"> 
+            <img src="img/Dacia Jogger.webp" alt="Dacia Jogger" class="car-image">
+
+            <div class="overlay-buttons">
+                <div class="exchange-button">&harr;</div>
+                <div class="circle-arrow">&gt;</div>
+            </div>
+
+            <div class="discount-badge">-10% dto</div>
+        </div>
+
+        <div class="car-info">
+            <div class="title-wrapper">
+                <h3>Dacia Jogger</h3>
+            </div>
+            <div class="price-line">
+                <p class="price">20.000 €</p>
+                <p class="pvp-price">P.V.P. 22.222 €</p>
+            </div>
+        </div>
+    </article>
+
+    <article class="car-card">
+        <div class="image-wrapper"> 
+            <img src="img/MG 3.webp" alt="MG 3" class="car-image">
+
+            <div class="overlay-buttons">
+                <div class="exchange-button">&harr;</div>
+                <div class="circle-arrow">&gt;</div>
+            </div>
+
+            <div class="discount-badge">-10% dto</div>
+        </div>
+
+        <div class="car-info">
+            <div class="title-wrapper">
+                <h3>MG 3</h3>
+            </div>
+            <div class="price-line">
+                <p class="price">18.000 €</p>
+                <p class="pvp-price">P.V.P. 20.000 €</p>
+            </div>
+        </div>
+    </article>
+
+</div>
+
+
+<script>
+const galeria = document.querySelector(".car-gallery");
+
+fetch("./data/coches.json")
+    .then(res => res.json())
+    .then(coches => {
+        coches.forEach(coche => {
+            
+            const card = document.createElement("article");
+            card.className = "car-card";
+
+            // -----------------------------
+            // Cálculo de descuento
+            // -----------------------------
+            let descuentoHTML = "";
+            let pvpHTML = "";
+
+            if (coche.pvp > coche.precio) {
+                const descuento = ((coche.pvp - coche.precio) / coche.pvp) * 100;
+                const descuentoRedondeado = Math.round(descuento);
+
+                descuentoHTML = `
+                    <div class="discount-badge">-${descuentoRedondeado}% dto</div>
+                `;
+
+                pvpHTML = `
+                    <p class="pvp-price">P.V.P. ${coche.pvp.toLocaleString('es-ES')} €</p>
+                `;
+            }
+
+            // -----------------------------
+            // Tarjeta completa
+            // -----------------------------
+            card.innerHTML = `
+                <div class="image-wrapper">
+                    <img src="${coche.imagen}" alt="${coche.nombre}" class="car-image">
+                    ${descuentoHTML}
+                    <div class="exchange-button">&harr;</div>
+                    <div class="circle-arrow">&gt;</div>
+                </div>
+
+                <div class="car-info">
+                    <h3>${coche.nombre}</h3>
+                    <div class="price-line">
+                        <p class="price">${coche.precio.toLocaleString('es-ES')} €</p>
+                        ${pvpHTML}
+                    </div>
+                </div>
+            `;
+
+            galeria.appendChild(card);
+        });
+    });
+</script>
+
+</body>
+</html>

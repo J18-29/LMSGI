@@ -1,0 +1,504 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+body{
+ height: 100vh;
+ display: flex;
+flex-direction: column;
+ flex-wrap: nowrap;
+}
+header{
+ height: 5vh;
+ background-color: black;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: nowrap;
+ align-items: center;
+ color: white;
+}
+header #menu{
+ flex-basis: 5%;
+}
+header #buscar{
+ flex-basis: 30%;
+ background-color: blue;
+}
+header figure{
+ flex-basis: 10%;
+ height: 100%;
+}
+header figure img{
+ height: 100%;
+}
+header form{
+flex-basis: 20%;
+ height: 100%;
+ background-color: rgb(0, 0, 0);
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+header form input{
+ flex-basis: 50%;
+ width: 80%;
+ border-radius: 20px;
+ font-size: 20px;
+ color: blue;
+ background-color: white;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+header nav{
+ flex-basis: 30%;
+ display: flex;
+ flex-direction: row;
+flex-wrap: nowrap;
+ justify-content: space-around;
+align-items: center;
+}
+header nav a{
+ color: white;
+text-decoration: none;
+font-size: 18px;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+header nav a:hover{
+color: aquamarine;
+}
+header #carrito{
+ color: white;
+ flex-basis: 10%; 
+ display: flex;
+ flex-direction: row;
+ flex-wrap: nowrap; 
+ justify-content: space-around;
+ align-items: center;
+}
+header #carrito i{
+ font-size: 25px;
+ color: green;
+}
+
+/* ----- BREADCRUMB ----- */
+
+.breadcrumb-container {
+    
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px; 
+    max-width: 1100px; 
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+}
+
+.breadcrumb-list {
+    
+    display: flex;
+    align-items: center;
+    gap: 4px; 
+    list-style: none;
+    padding: 0;
+    font-size: 11px; 
+    color: #888;
+    justify-content: flex-start; 
+    margin-left: 490px; 
+    
+}
+
+.breadcrumb-item {
+   
+    display: flex;
+    align-items: center;
+    color: #777;
+}
+
+
+.breadcrumb-item:not(:last-child)::after {
+    
+    content: ">";
+    margin-left: 4px; 
+    margin-right: 0px; 
+    color: #b59aff; 
+    font-weight: 600;
+    font-size: 11px; 
+}
+
+.breadcrumb-item a {
+    color: #777;
+    text-decoration: none;
+    font-size: 11px; 
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-item i {
+    font-size: 11px; 
+    color: #555; 
+    margin-right: 4px; 
+}
+
+
+.breadcrumb-item[aria-current="page"] {
+    color: #333;
+    font-weight: 600;
+}
+
+
+main {
+    margin: 40px auto;
+    padding: 10px 20px; 
+    max-width: 1250px;
+}
+main section{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+flex-wrap: wrap;
+
+}
+/* ----------------------------- */
+/*        CONTENEDOR PRINCIPAL   */
+/* ----------------------------- */
+
+main {
+    max-width: 1250px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+
+
+
+hr {
+    border: none;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+}
+
+/* ----------------------------- */
+/*        LAYOUT PRODUCTO        */
+/* ----------------------------- */
+
+.product-detail-layout {
+    
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+
+
+/* ----------------------------- */
+/*        IMAGEN PRODUCTO        */
+/* ----------------------------- */
+
+.product-image-container {
+    position: relative;
+    min-width: 450px;   /* evita que la imagen se aplaste */
+    margin-left: 20px;
+}
+
+.product-main-image {
+    
+    width: 400px;
+    height: auto;
+}
+
+
+
+.fresh-badge {
+    position: absolute;
+    width: 115px;
+    top: -10px;
+    left: -15px;
+    z-index: 5;
+}
+
+
+
+.envio-gratis-badge {
+    position: absolute;
+    top: 112px;      
+    left: 5px;       
+    background: #ff2fa1;
+    color: #fff;
+    padding: 6px 18px;
+    font-size: 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    z-index: 6;
+}
+
+
+/* ----------------------------- */
+/*        INFO PRODUCTO          */
+/* ----------------------------- */
+
+.product-info-details {
+    width: 100%;
+    max-width: 480px;    
+}
+
+.product-title {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+
+/* VALORACIONES */
+.valoraciones {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    margin-top: 5px; 
+   
+}
+
+
+.valoraciones .star i {
+    color: #ffdd3c;
+    font-size: 10px;
+}
+
+.review-score {
+    
+    font-weight: bold;
+    color: #333;
+}
+
+.comentarios {
+    color: #333; 
+}
+
+/* PRECIOS */
+
+.prices {
+    flex-direction: row; 
+    align-items: center; 
+    gap: 15px; 
+    margin-top: 15px; 
+   
+}
+.price-discount-row { 
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    margin-top: 15px;
+}
+
+.dto {
+    background: #ff2fa1;
+    color: white;
+    padding: 3px 8px; 
+    font-size: 15px; 
+    border-radius: 4px; 
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 0; 
+}
+.pvp {
+    font-size: 2em; 
+    font-weight: 700;
+    color: #111;
+}
+
+.pvr {
+    display: block; 
+    font-size: 10px;
+    text-decoration: line-through;
+    color: #aaa;
+    margin-top: 5px; 
+    
+}
+
+.iva-note {
+    display:block;
+    color: #888;
+    font-size: 13px;
+    margin-top: 5px; 
+}
+
+/* REFERENCIA */
+.reference-info {
+    margin-top: 8px;
+    color: #777;
+    font-size: 10px;
+}
+
+
+
+/* ----------------------------- */
+/*     BLOQUE DE ENVÍO / STOCK   */
+/* ----------------------------- */
+
+.shipping-details-block {
+   
+    background-color: #f7f7f7; 
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    
+    display: flex; 
+    align-items: flex-start;
+    gap: 15px; 
+    flex-direction: row; 
+}
+.icon-circle {
+    background-color: #ff3377;
+    color: white;
+    padding: 10px; 
+    border-radius: 50%;
+    font-size: 1.2em;
+    min-width: 40px; 
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.shipping-details-block i {
+    color: #f03085;
+}
+
+.shipping-details-block .availability-row {
+    font-weight: bold;
+    color: #000; 
+    margin-bottom: 5px;
+}
+
+.shipping-and-warranty-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    gap: 10px; 
+    margin-top: 10px;
+}
+.shipping-box-wrapper {
+   display: flex; 
+    align-items: flex-start;
+    gap: 15px; 
+    padding: 15px;
+    border: 1px solid #eee; 
+    border-radius: 8px;
+    background-color: #fafafa; 
+    margin-top: 15px;
+}
+
+
+.shipping-icon-circle {
+    background-color: #ff3377;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1.5em; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50px; 
+    min-height: 50px;
+}
+.shipping-info-box,
+.delivery-info-box,
+.warranty-info-box {
+    display: block; 
+    gap: 0;
+    font-size: 0.9em; 
+}
+
+/* ----------------------------- */
+/*  BLOQUE FRESH FRIDAY (NEGRO)  */
+/* ----------------------------- */
+
+.black-friday-promo {
+    background: black;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    margin: 25px 0;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.black-friday-promo button {
+    border-radius: 25px;
+  padding: 10px 18px; 
+}
+
+/* ----------------------------- */
+/*    OPCIONES DE COMPRA         */
+/* ----------------------------- */
+
+.purchase-options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.capacity-selector p,
+.other-options p {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+
+.capacity-selector {
+    margin-bottom: 10px;
+}
+
+.capacity-selector p::after {
+    content: "  ● seleccionado";
+    color: #00c853;
+    font-size: 12px;
+}
+
+/* ----------------------------- */
+/*        ACABADOS               */
+/* ----------------------------- */
+
+.color-option {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.color-option:hover {
+    background: #eee;
+}
+
+/* ----------------------------- */
+/*   BOTÓN COMPRAR AHORA         */
+/* ----------------------------- */
+
+.buy-button {
+    background: #d1ff00;
+    padding: 18px;
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 40px;
+    margin-top: 25px;
+    cursor: pointer;
+    border: none;
+}
+
+.buy-button:hover {
+    filter: brightness(0.95);
+}

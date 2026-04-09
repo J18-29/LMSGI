@@ -1,0 +1,162 @@
+{
+  "menus": [
+    {
+      "nombre": "Menu Dulce",
+      "categorias": [
+        {
+          "categoria": "Entradas",
+          "items": [
+            {
+              "nombre": "Magdalenas variadas",
+              "descripcion": "Magdalenas recién horneadas de diferentes sabores para disfrutar en cualquier momento.",
+              "precio": 3.50,
+              "imagen": "img/Magdalena.jfif",
+              "caracteristicas": ["Caseras", "Variedad de sabores", "Frescas"]
+            },
+            {
+              "nombre": "Galletas caseras",
+              "descripcion": "Galletas tradicionales hechas en casa con ingredientes de calidad.",
+              "precio": 2.95,
+              "imagen": "img/Galletas.jfif",
+              "caracteristicas": ["Caseras", "Crujientes", "Sin conservantes"]
+            }
+          ]
+        },
+        {
+          "categoria": "Platos principales",
+          "items": [
+            {
+              "nombre": "Tarta de chocolate",
+              "descripcion": "Tarta de chocolate negro con relleno cremoso y cobertura deliciosa.",
+              "precio": 5.50,
+              "imagen": "img/Tarta de Chocolate.jfif",
+              "caracteristicas": ["Casera", "Intenso sabor a chocolate", "Base crujiente"]
+            },
+            {
+              "nombre": "Cheesecake",
+              "descripcion": "Cremoso cheesecake con base de galleta y topping de frutos rojos.",
+              "precio": 6.00,
+              "imagen": "img/Cheesecake.jfif",
+              "caracteristicas": ["Cremoso", "Frutos rojos frescos", "Ideal para postre"]
+            }
+          ]
+        },
+        {
+          "categoria": "Bebidas",
+          "items": [
+            {
+              "nombre": "Cafe",
+              "descripcion": "Cafe recién hecho, aromático y perfecto para acompañar tu postre.",
+              "precio": 2.00,
+              "imagen": "img/Cafe.jfif",
+              "caracteristicas": ["Aromático", "Recién hecho", "Ideal para despertar"]
+            },
+            {
+              "nombre": "Te",
+              "descripcion": "Te caliente de alta calidad, disponible en diferentes variedades.",
+              "precio": 1.80,
+              "imagen": "img/Te.jfif",
+              "caracteristicas": ["Relajante", "Variedad de sabores", "Natural"]
+            }
+          ]
+        },
+        {
+          "categoria": "Postres",
+          "items": [
+            {
+              "nombre": "Copa de helado arcoiris",
+              "descripcion": "Colorida copa de helado con sabores variados, perfecta para compartir o disfrutar solo.",
+              "precio": 4.00,
+              "imagen": "img/Copa de helado arcoiris.jpg",
+              "caracteristicas": ["Refrescante", "Variedad de sabores", "Ideal para niños"]
+            }
+          ]
+        }
+      ],
+      "total": 25.75
+    },
+
+    {
+      "nombre": "Menu Gourmet",
+      "categorias": [
+        {
+          "categoria": "Platos principales",
+          "items": [
+            {
+              "nombre": "Burger gourmet",
+              "descripcion": "Hamburguesa gourmet con ingredientes frescos y pan artesanal de primera calidad.",
+              "precio": 18.50,
+              "imagen": "img/Burguer Gourmet.jfif",
+              "caracteristicas": ["Carne premium", "Pan artesanal", "Ingredientes frescos"]
+            },
+            {
+              "nombre": "Ensalada gourmet",
+              "descripcion": "Ensalada fresca con vegetales de temporada y aderezo especial de la casa.",
+              "precio": 15.75,
+              "imagen": "img/Ensalada Gourmet.jfif",
+              "caracteristicas": ["Fresca", "Saludable", "Ingredientes premium"]
+            }
+          ]
+        },
+        {
+          "categoria": "Bebidas",
+          "items": [
+            {
+              "nombre": "Vino tinto",
+              "descripcion": "Vino tinto seleccionado con cuerpo intenso y notas frutales.",
+              "precio": 12.00,
+              "imagen": "img/Vino Tinto.jfif",
+              "caracteristicas": ["Selección premium", "Acompaña comidas", "Notas frutales"]
+            },
+            {
+              "nombre": "Cerveza artesanal",
+              "descripcion": "Cerveza elaborada artesanalmente con lúpulos seleccionados.",
+              "precio": 6.50,
+              "imagen": "img/Cerveza Artesanal.jfif",
+              "caracteristicas": ["Artesanal", "Lúpulos seleccionados", "Refrescante"]
+            }
+          ]
+        },
+        {
+          "categoria": "Postres",
+          "items": [
+            {
+              "nombre": "Tarta individual de fresa",
+              "descripcion": "Tarta individual con fresas frescas y crema suave, perfecta para terminar tu comida.",
+              "precio": 7.25,
+              "imagen": "img/Tarta individual de fresa.jfif",
+              "caracteristicas": ["Casera", "Fresas frescas", "Cremosa"]
+            },
+            {
+              "nombre": "Mousse de mango",
+              "descripcion": "Mousse ligero de mango natural con textura cremosa y sabor tropical.",
+              "precio": 6.80,
+              "imagen": "img/Mousse de mango.jfif",
+              "caracteristicas": ["Ligero", "Sabor tropical", "Cremoso"]
+            }
+          ]
+        },
+        {
+          "categoria": "Entradas",
+          "items": [
+            {
+              "nombre": "Bruschettas",
+              "descripcion": "Rebanadas de pan tostado con tomate fresco, aceite de oliva y albahaca.",
+              "precio": 5.20,
+              "imagen": "img/Bruschettas.jfif",
+              "caracteristicas": ["Frescas", "Crujientes", "Mediterráneas"]
+            },
+            {
+              "nombre": "Sopa de calabaza",
+              "descripcion": "Sopa cremosa de calabaza con especias aromáticas y un toque de crema.",
+              "precio": 4.80,
+              "imagen": "img/Sopa de calabaza.jfif",
+              "caracteristicas": ["Cremosa", "Aromática", "Casera"]
+            }
+          ]
+        }
+      ],
+      "total": 76.80
+    }
+  ]
+}

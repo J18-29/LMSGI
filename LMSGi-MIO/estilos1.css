@@ -1,0 +1,46 @@
+/* estructura de un selector
+    nombre_del_selector
+propiedad1: valor;
+       propiedad2: valor;
+       propiedad3: valor;
+       ...
+       propiedadN: valor;
+   }
+*/
+
+/*selector de tipo (etiqueta html) */
+h1 {
+    /* formato a la fuente/letra */  
+     color: rgb(164, 30, 102);
+     font-size: 20px;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-seri;
+     font-weight: 100;
+     font-style: oblique;
+     text-decoration: overline;
+     text-transform: capitalize;
+     letter-spacing: 5px;
+     word-spacing: 20px;
+     /* formatos al parrafo */
+     text-align: center;
+} 
+
+p {
+text-align: justify;
+line-height: 1.3; /* interlineado */
+text-indent: 20px; /* sangria primera linea*/
+margin:50px; /* margen exterior */
+margin-left: 100px ;
+margin-right: 50px;
+margin-top: 100px;
+margin-bottom: 20px;
+margin: 100px 50px 20px 100px; /* margen:arriba derecha abajo izquierda*/
+margin: 200px 50px; /* margen: arriba y abajo derecha e izquierda */
+border: 2px solid rgb(255, 4, 0); /* borde: grosor tipo color */
+border: 5px solid rgb(255, 0, 0);
+padding: 20px; /* margen interior */
+border-radius: 20px;
+border-top-left-radius: 50px;
+border-bottom-right-radius: 100px;
+
+background-color: rgba(255, 255, 255, 0.947);
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Burger Flame - Menús Burger King</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <img src="img/burguerflame.jpg" alt="Logo Burger Flame" class="logo">
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Menú</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <section class="header-text">
+            <p class="titulo"><strong>Burger Flame</strong></p>
+            <p class="subtitulo">Sabor a la parrilla, estilo clásico</p>
+        </section>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <!-- MENÚS BURGER KING -->
+        <section class="menu-section">
+            <h2>Menús Burger King</h2>
+
+            <div class="menu-grid">
+                <!-- Tarjeta Menú 1 -->
+                <article class="menu-item" onclick="toggleDetails('menu1')">
+                    <img src="img/MenuWhooper.jfif" alt="Menú Whopper">
+                    <h3>Menú Whopper</h3>
+                    <p class="precio">9,90 €</p>
+                    <div class="menu-details" id="menu1">
+                        <div class="producto">
+                            <img src="img/Whooper.jfif" alt="Hamburguesa Whopper">
+                            <p>Hamburguesa Whopper</p>
+                        </div>
+                        <div class="producto">
+                            <img src="img/PatatasFritasMedianas.jfif" alt="Patatas fritas medianas">
+                            <p>Patatas fritas medianas</p>
+                        </div>
+                        <div class="producto">
+                            <img src="img/Bebida.jfif" alt="Bebida 500ml">
+                            <p>Bebida 500ml</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Tarjeta Menú 2 -->
+                <article class="menu-item" onclick="toggleDetails('menu2')">
+                    <img src="img/MenuDoubleCheesburguer.jfif" alt="Menú Double Cheeseburger">
+                    <h3>Menú Double Cheeseburger</h3>
+                    <p class="precio">10,50 €</p>
+                    <div class="menu-details" id="menu2">
+                        <div class="producto">
+                            <img src="img/DoubleCheesburguer.jfif" alt="Double Cheeseburger">
+                            <p>Double Cheeseburger</p>
+                        </div>
+                        <div class="producto">
+                            <img src="img/PatatasFritasGrandes.jfif" alt="Patatas fritas grandes">
+                            <p>Patatas fritas grandes</p>
+                        </div>
+                        <div class="producto">
+                            <img src="img/Bebida.jfif" alt="Bebida 500ml">
+                            <p>Bebida 500ml</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Tarjeta Menú 3 -->
+                <article class="menu-item" onclick="toggleDetails('menu3')">
+                    <img src="img/MenuChickenNuggets.jfif" alt="Menú Chicken Nuggets">
+                    <h3>Menú Chicken Nuggets</h3>
+                    <p class="precio">8,50 €</p>
+                    <div class="menu-details" id="menu3">
+                        <div class="producto">
+                            <img src="img/Nuggets.jfif" alt="Chicken Nuggets">
+                            <p>6 Chicken Nuggets</p>
+                        </div>
+                        <div class="producto">
+                            <img src="img/PatatasFritasMedianas.jfif" alt="Patatas fritas medianas">
+                            <p>Patatas fritas medianas</p>
+                        </div>
+                        <div class="producto">
+                            <img src="img/Bebida.jfif" alt="Bebida 500ml">
+                            <p>Bebida 500ml</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Burger Flame · Página de ejemplo</p>
+    </footer>
+
+    <!-- JavaScript para mostrar/ocultar detalles -->
+    <script>
+        function toggleDetails(id) {
+            const element = document.getElementById(id);
+            if (element.style.display === "block") {
+                element.style.display = "none";
+            } else {
+                element.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

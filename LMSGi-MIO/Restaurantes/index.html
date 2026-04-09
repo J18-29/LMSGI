@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Capricho - Menú</title>
+    <link rel="stylesheet" href="estilos.css">
+
+    <!-- Función urlKey disponible para todo el HTML -->
+    <script>
+    function urlKey(nombre) {
+        return nombre.toLowerCase()
+                     .normalize("NFD")
+                     .replace(/[\u0300-\u036f]/g, "")
+                     .replace(/\s+/g, "-");
+    }
+    </script>
+</head>
+<body>
+<header>
+    <figure class="header-logo">
+        <img src="img/logo.jpg" alt="Logo Dulce Capricho">
+    </figure>
+
+    <section class="header-title">
+        <h1>Dulce Capricho</h1>
+        <p>¡Descubre nuestros menús creativos y clásicos!</p>
+    </section>
+</header>
+
+<main id="menus-container">
+
+    <!-- ===== Menú Salado ===== -->
+    <div class="menu">
+        <h2>Menú Salado</h2>
+
+        <!-- Entradas -->
+        <div class="menu-category">
+            <h3>Entradas</h3>
+
+            <div class="menu-item">
+                <img src="img/patatas rizadas.jpg" alt="Patatas rizadas">
+                <div class="menu-item-content">
+                    <p class="item-name">Patatas rizadas</p>
+                    <p class="item-price">7,45€</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="img/Aros de pollo.jpg" alt="Aros de pollo">
+                <div class="menu-item-content">
+                    <p class="item-name">Aros de pollo</p>
+                    <p class="item-price">4,45€</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Platos principales -->
+        <div class="menu-category">
+            <h3>Platos principales</h3>
+
+            <div class="menu-item">
+                <img src="img/hamburguesa de carne.jpg" alt="Hamburguesa de carne">
+                <div class="menu-item-content">
+                    <p class="item-name">Hamburguesa de carne</p>
+                    <p class="item-price">14,34€</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="img/Hamburguesa vegetariana.jfif" alt="Hamburguesa vegetariana">
+                <div class="menu-item-content">
+                    <p class="item-name">Hamburguesa vegetariana</p>
+                    <p class="item-price">13,20€</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bebidas -->
+        <div class="menu-category">
+            <h3>Bebidas</h3>
+
+            <div class="menu-item">
+                <img src="img/Zumo de arandanos y frambuesa.jpg" alt="Zumo de arándanos y frambuesa">
+                <div class="menu-item-content">
+                    <p class="item-name">Zumo de arándanos y frambuesa</p>
+                    <p class="item-price">5,45€</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="img/Limonada Casera.jfif" alt="Limonada casera">
+                <div class="menu-item-content">
+                    <p class="item-name">Limonada casera</p>
+                    <p class="item-price">5,50€</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postres -->
+        <div class="menu-category">
+            <h3>Postres</h3>
+
+            <div class="menu-item">
+                <img src="img/Tarta de manzana.jpg" alt="Tarta de manzana">
+                <div class="menu-item-content">
+                    <p class="item-name">Tarta de manzana</p>
+                    <p class="item-price">4,95€</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total -->
+        <div class="total">Total: 51,34€</div>
+    </div>
+
+</main>
+
+<footer>
+    &copy; 2025 Dulce Capricho. Todos los derechos reservados.
+</footer>
+
+<script>
+// Redirigir al hacer click en cualquier plato
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".menu-item").forEach(item => {
+        item.addEventListener("click", () => {
+            const plato = item.querySelector(".item-name").textContent;
+            window.location.href = "detalles.html?plato=" + urlKey(plato);
+        });
+    });
+
+    // Opcional: si usas JSON para cargar menús dinámicamente
+    const menuContainer = document.getElementById("menus-container");
+
+    fetch("data/menu.json")
+        .then(res => res.json())
+        .then(data => {
+            data.menus.forEach(menu => {
+                const menuDiv = document.createElement("div");
+                menuDiv.classList.add("menu");
+
+                // Título del menú
+                const title = document.createElement("h2");
+                title.textContent = menu.nombre;
+                menuDiv.appendChild(title);
+
+                // Categorías del menú
+                menu.categorias.forEach(categoria => {
+                    const catDiv = document.createElement("div");
+                    catDiv.classList.add("menu-category");
+
+                    const catTitle = document.createElement("h3");
+                    catTitle.textContent = categoria.categoria;
+                    catDiv.appendChild(catTitle);
+
+                    // Platos de la categoría
+                    categoria.items.forEach(item => {
+                        const itemDiv = document.createElement("div");
+                        itemDiv.classList.add("menu-item");
+
+                        const img = document.createElement("img");
+                        img.src = item.imagen;
+                        img.alt = item.nombre;
+
+                        const content = document.createElement("div");
+                        content.classList.add("menu-item-content");
+
+                        const name = document.createElement("p");
+                        name.classList.add("item-name");
+                        name.textContent = item.nombre;
+
+                        const price = document.createElement("p");
+                        price.classList.add("item-price");
+                        price.textContent = item.precio.toFixed(2) + "€";
+
+                        content.appendChild(name);
+                        content.appendChild(price);
+                        itemDiv.appendChild(img);
+                        itemDiv.appendChild(content);
+
+                        catDiv.appendChild(itemDiv);
+                    });
+
+                    menuDiv.appendChild(catDiv);
+                });
+
+                const total = document.createElement("div");
+                total.classList.add("total");
+                total.textContent = "Total: " + menu.total.toFixed(2) + "€";
+
+                menuDiv.appendChild(total);
+                menuContainer.appendChild(menuDiv);
+            });
+
+            // Volver a asignar event listeners a los elementos dinámicos
+            document.querySelectorAll(".menu-item").forEach(item => {
+                item.addEventListener("click", () => {
+                    const plato = item.querySelector(".item-name").textContent;
+                    window.location.href = "detalles.html?plato=" + urlKey(plato);
+                });
+            });
+        })
+        .catch(err => console.error("Error cargando el menú:", err));
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Plato</title>
+    <link rel="stylesheet" href="detalles.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">← Volver al menú</a>
+    </nav>
+    <div class="titulo">
+        <h1>Detalles del plato</h1>
+    </div>
+</header>
+
+<main>
+   <section class="detalle">
+    <article class="tarjeta">
+
+        <figure class="imagen">
+            <img id="imagen-plato" src="" alt="">
+        </figure>
+
+        <div class="info">
+            <h2 id="nombre-plato">Nombre del plato</h2>
+
+            <p class="descripcion" id="descripcion-plato">
+                Descripción del plato
+            </p>
+
+            <p class="precio" id="precio-plato">
+                Precio: <strong>0,00 €</strong>
+            </p>
+
+            <ul class="caracteristicas" id="caracteristicas-plato">
+                <!-- Características se llenarán dinámicamente -->
+            </ul>
+        </div>
+
+    </article>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Dulce Capricho</p>
+</footer>
+
+<script src="menuData.js"></script> <!-- Solo si quieres usar JSON en JS para test rápido -->
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const platoClave = params.get('plato');
+
+    /* =====================
+       PLATOS PREDEFINIDOS
+    ====================== */
+  const platos = {
+    /* ===== MENÚ SALADO ===== */
+    "patatas-rizadas": {
+        nombre: "Patatas rizadas",
+        descripcion: "Patatas rizadas crujientes y doradas, perfectas para acompañar cualquier plato principal.",
+        precio: 7.45,
+        imagen: "img/patatas rizadas.jpg",
+        caracteristicas: [
+            "Crujientes y doradas",
+            "Sabor irresistible",
+            "Perfectas como snack"
+        ]
+    },
+    "aros-de-pollo": {
+        nombre: "Aros de pollo",
+        descripcion: "Aros de pollo crujientes por fuera y jugosos por dentro, acompañados de salsa especial.",
+        precio: 4.45,
+        imagen: "img/Aros de pollo.jpg",
+        caracteristicas: [
+            "Exterior dorado y crujiente",
+            "Pollo jugoso en su interior",
+            "Salsa especial incluida"
+        ]
+    },
+    "hamburguesa-de-carne": {
+        nombre: "Hamburguesa de carne",
+        descripcion: "Jugosa hamburguesa de carne de primera calidad, con ingredientes frescos y pan artesanal.",
+        precio: 14.34,
+        imagen: "img/hamburguesa de carne.jpg",
+        caracteristicas: [
+            "Carne de primera calidad",
+            "Pan artesanal",
+            "Incluye guarnición de patatas"
+        ]
+    },
+    "hamburguesa-vegetariana": {
+        nombre: "Hamburguesa vegetariana",
+        descripcion: "Deliciosa hamburguesa vegetariana hecha con verduras frescas y salsa especial.",
+        precio: 13.20,
+        imagen: "img/Hamburguesa vegetariana.jfif",
+        caracteristicas: [
+            "100% vegetal",
+            "Sabor exquisito",
+            "Saludable y nutritiva"
+        ]
+    },
+
+    /* ===== BEBIDAS ===== */
+    "zumo-de-arandanos-y-frambuesa": {
+        nombre: "Zumo de arándanos y frambuesa",
+        descripcion: "Refrescante zumo natural de arándanos y frambuesa, ideal para acompañar cualquier comida.",
+        precio: 5.45,
+        imagen: "img/Zumo de arandanos y frambuesa.jpg",
+        caracteristicas: [
+            "100% natural",
+            "Refrescante y frutal",
+            "Sin azúcares añadidos"
+        ]
+    },
+    "limonada-casera": {
+        nombre: "Limonada casera",
+        descripcion: "Limonada casera fresca con un toque de menta, perfecta para cualquier ocasión.",
+        precio: 5.50,
+        imagen: "img/Limonada Casera.jfif",
+        caracteristicas: [
+            "Hecha en casa",
+            "Refrescante y ligera",
+            "Aroma natural a menta"
+        ]
+    },
+
+    /* ===== POSTRES ===== */
+    "tarta-de-manzana": {
+        nombre: "Tarta de manzana",
+        descripcion: "Tarta de manzana casera, jugosa y con un toque de canela.",
+        precio: 4.95,
+        imagen: "img/Tarta de manzana.jpg",
+        caracteristicas: [
+            "Casera y deliciosa",
+            "Con manzana fresca",
+            "Perfecta para acompañar café o té"
+        ]
+    }
+};
+
+
+    /* =====================
+       NORMALIZAR NOMBRES
+    ====================== */
+    function urlKey(nombre) {
+        return nombre
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, "-");
+    }
+
+    /* =====================
+       FUNCION PARA RELLENAR DETALLES
+    ====================== */
+    function rellenarDetalles(datos) {
+        document.getElementById("nombre-plato").textContent = datos.nombre;
+        document.getElementById("descripcion-plato").textContent = datos.descripcion;
+
+        const precio = Number(datos.precio);
+        document.getElementById("precio-plato").innerHTML =
+            `Precio: <strong>${!isNaN(precio) ? precio.toFixed(2) : datos.precio} €</strong>`;
+
+        const img = document.getElementById("imagen-plato");
+        img.src = datos.imagen;
+        img.alt = datos.nombre;
+
+        const lista = document.getElementById("caracteristicas-plato");
+        lista.innerHTML = "";
+
+        if (Array.isArray(datos.caracteristicas)) {
+            datos.caracteristicas.forEach(c => {
+                const li = document.createElement("li");
+                li.textContent = c;
+                lista.appendChild(li);
+            });
+        } else {
+            const li = document.createElement("li");
+            li.textContent = "Producto incluido en el menú";
+            lista.appendChild(li);
+        }
+    }
+
+    /* =====================
+       PRUEBA CON PLATOS PREDEFINIDOS
+    ====================== */
+    if (platos[platoClave]) {
+        rellenarDetalles(platos[platoClave]);
+        return;
+    }
+
+    /* =====================
+       INTENTAR LEER JSON
+    ====================== */
+    function buscarEnJSON(data) {
+        let encontrado = null;
+
+        for (const menu of data.menus) {
+            for (const categoria of menu.categorias) {
+                for (const item of categoria.items) {
+                    if (urlKey(item.nombre) === platoClave) {
+                        encontrado = item;
+                        break;
+                    }
+                }
+                if (encontrado) break;
+            }
+            if (encontrado) break;
+        }
+
+        return encontrado;
+    }
+
+    // Si tienes menuData.js (prueba sin servidor)
+    if (typeof menuData !== "undefined") {
+        const encontrado = buscarEnJSON(menuData);
+        if (encontrado) {
+            rellenarDetalles(encontrado);
+            return;
+        }
+    }
+
+    // Fetch del JSON real (requiere servidor local)
+    fetch("data/menu.json")
+        .then(res => res.json())
+        .then(data => {
+            const encontrado = buscarEnJSON(data);
+            if (encontrado) {
+                rellenarDetalles(encontrado);
+            } else {
+                alert("Plato no encontrado");
+            }
+        })
+        .catch(err => {
+            console.error("Error cargando el menú:", err);
+        });
+});
+</script>
+
+</body>
+</html>

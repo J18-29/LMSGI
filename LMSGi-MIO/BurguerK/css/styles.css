@@ -1,0 +1,121 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header img.logo {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+header nav {
+    margin: 10px 0;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+header .header-text .titulo {
+    font-size: 2em;
+}
+
+header .header-text .subtitulo {
+    font-size: 1.2em;
+    color: #ddd;
+}
+
+/* MAIN */
+main section.menu-section {
+    padding: 20px;
+}
+
+main section.menu-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #333;
+}
+
+main section.menu-section .menu-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+main section.menu-section .menu-item {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+main section.menu-section .menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+main section.menu-section .menu-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+main section.menu-section .menu-item .precio {
+    font-weight: bold;
+    color: #e63946;
+    margin: 10px 0;
+}
+
+main section.menu-section .menu-item .menu-details {
+    display: none;
+    margin-top: 10px;
+}
+
+main section.menu-section .menu-item .menu-details .producto {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+main section.menu-section .menu-item .menu-details .producto img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+main section.menu-section .menu-item .menu-details .producto p {
+    color: #555;
+}
+
+/* FOOTER */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
