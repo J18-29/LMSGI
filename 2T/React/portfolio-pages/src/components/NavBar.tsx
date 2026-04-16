@@ -9,6 +9,7 @@ export const NavBar = () => {
             <NavLink to="/" className={linkClass}>Home</NavLink>
             <NavLink to="/trabajos" className={linkClass}>Trabajos</NavLink>
             <NavLink to="/contacto" className={linkClass}>Contacto</NavLink>
+                <NavLink to="/cursos" className={linkClass}>Cursos</NavLink>
         </nav>
 
     )

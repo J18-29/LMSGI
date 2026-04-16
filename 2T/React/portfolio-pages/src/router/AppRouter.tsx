@@ -1,12 +1,12 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 
-// Usamos el alias @ para que no importe dónde esté este archivo
 import { Home } from '@/pages/Home'
 import { Trabajos } from '@/pages/Trabajos'
 import { Contacto } from '@/pages/Contacto'
 import { MainLayout } from '@/layouts/MainLayout'
 import Servicios from "@/pages/servicios/Servicios";
 import { ServicioDetalle } from "@/pages/servicios/ServicioDetalle";
+import { Cursos } from '@/pages/cursos/Cursos'
 
 export const AppRouter = () => {
     return (
@@ -18,6 +18,7 @@ export const AppRouter = () => {
                     <Route path="/contacto" element={<Contacto />} />
                     <Route path="/servicios" element={<Servicios />} />
                     <Route path="/servicios/:id" element={<ServicioDetalle />} />
+                    <Route path="/cursos" element={<Cursos />} />
                 </Route>
             </Routes>
         </BrowserRouter>
